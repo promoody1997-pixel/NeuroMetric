@@ -1,0 +1,16 @@
+// Top-level build file
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // استخدام إصدار مستقر ومتوافق
+        classpath 'com.android.tools.build:gradle:8.2.0'
+    }
+}
+
+// مهمة لتنظيف ملفات البناء القديمة
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
