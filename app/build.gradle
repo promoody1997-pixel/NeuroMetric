@@ -22,12 +22,13 @@ android {
         }
     }
 
+    // --- التصحيح الحاسم هنا ---
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+    // ---------------------------
 
-    // هذا الجزء يمنع توقف البناء بسبب التحذيرات البسيطة
     lint {
         abortOnError false
         checkReleaseBuilds false
