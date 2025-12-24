@@ -20,11 +20,19 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    # --- بداية التعديلات من التقرير ---
+
+    # 1. إعطاء إذن التشغيل لملف gradlew
+    # [span_2](start_span)[span_3](start_span)المصدر:[span_2](end_span)[span_3](end_span)
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    # 2. استخدام ./gradlew بدلاً من gradle
+    # [span_4](start_span)[span_5](start_span)المصدر:[span_4](end_span)[span_5](end_span)
     - name: Build with Gradle
-      # التغيير هنا:
-      # -x lint: لإيقاف توقف البناء بسبب التحذيرات
-      # --stacktrace: لعرض تفاصيل الخطأ بوضوح لو فشل البناء
-      run: gradle :app:assembleDebug -x lint --warning-mode=none --stacktrace
+      run: ./gradlew :app:assembleDebug -x lint --warning-mode=none --stacktrace
+
+    # ----------------------------------
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
